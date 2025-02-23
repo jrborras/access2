@@ -1,0 +1,27 @@
+version: "3.5"
+
+services:
+
+  access2:
+    container_name: access2
+    build: .
+    restart: always
+    env_file:
+      - .env
+    environment:
+      - TZ=${TIME_ZONE}
+      - DEBUGMODE=${DEBUG_MODE_DEV} 
+      - MQTT_ADDRESS=${MQTT_ADDRESS}
+      - MQTT_PORT=${MQTT_PORT}
+      - MQTT_USER=${MQTT_USER}
+      - MQTT_PASSWD=${MQTT_PASSWD}
+      - MQTT_CLIENT=${MQTT_ACCESS2_CLIENT}
+      - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
+      - TELEGRAM_CHATID=${TELEGRAM_CHATID}
+      - DOOR_TOPIC=${DOOR_TOPIC}
+      - ACCESS_TOPIC=${ACCESS_TOPIC}
+      - ACCESS_TOPIC_STATUS=${ACCESS_TOPIC_STATUS}
+      - ACCESS_COMMAND=${ACCESS_COMMAND}
+      - ACCESS_BUTTON=${ACCESS_BUTTON}
+      - ACCESS_BUTTON_PAYLOAD=${ACCESS_BUTTON_PAYLOAD}
+      - TRIGGER_TIME=${TRIGGER_TIME}
